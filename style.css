@@ -1,3 +1,99 @@
-body { font-family: sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; }
-.comando { background: white; padding: 15px; margin-bottom: 10px; border-left: 5px solid #2ecc71; border-radius: 4px; }
-h1 { color: #2c3e50; }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primary: #132A44;
+    --color-secondary: #22A38A;
+    --color-card: rgba(255,255,255,0.12);
+    --color-text: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+    url('fondo.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: var(--color-text);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header{
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 10px;
+}
+
+header p{
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+#contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.comando {
+    background: var(--color-card);
+    backdrop-filter: blur(10px);
+
+    padding: 25px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    text-align: left;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+    transition: 0.3s ease;
+    border-left: 5px solid #2ecc71; 
+    border-radius: 4px; 
+}
+
+.comando:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+.comando h2{
+    margin-bottom: 12px;
+    color: #2ecc71;
+    font-size: 1.5rem;
+}
+
+.comando p{
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+@media screen and (max-width: 768px){
+
+    body{
+        padding: 30px 15px;
+    }
+
+    #contenedor{
+        grid-template-columns: 1fr;
+    }
+}
